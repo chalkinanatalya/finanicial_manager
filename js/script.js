@@ -9,15 +9,17 @@ financeForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const typeOperatiom = e.submitter.dataset.typeOperation;
-    const changeAmount = convertStringNumber(financeForm.amount.value);
+    const changeAmount = Math.abs(convertStringNumber(financeForm.amount.value));
 
     if(typeOperatiom === 'income') {
-        amount = amount + changeAmount;
+        amount += changeAmount;
     }
 
     if(typeOperatiom === 'expenses') {
-        amount = amount - changeAmount;
+        amount -=changeAmount;
     }
+
+    financeAmount.textContent = `${amount.toLocaleString()}$`;
 });
 
 
