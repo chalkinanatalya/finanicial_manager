@@ -69,19 +69,19 @@
         <div class="container report__container">
           <h2 class="report__title">Report</h2>
 
-          <div class="report__dates">
+          <form class="report__dates">
             <div class="report__date">
               <label for="start-date">Start date</label>
-              <input type="date" id="start-date">
+              <input type="date" id="start-date" name="startDate">
             </div>
 
             <div class="report__date">
               <label for="end-date">End date</label>
-              <input type="date" id="end-date">
+              <input type="date" id="end-date" name="endDate">
             </div>
 
             <button class="report__button">Show</button>
-          </div>
+          </form>
 
           <table class="report__table">
             <thead>
@@ -97,7 +97,7 @@
             </thead>
 
             <tbody class="report__operation-list">
-              <tr class="report__row">
+              <!-- <tr class="report__row">
                 <td class="report__cell">Food</td>
                 <td class="report__cell">1000</td>
                 <td class="report__cell">Spar Store</td>
@@ -106,7 +106,7 @@
                 <td class="report__action-cell">
                   <button class="report__button report__button_table">&#10006;</button>
                 </td>
-              </tr>
+              </tr> -->
 
               <!-- Repeated rows omitted for brevity -->
 

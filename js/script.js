@@ -3,12 +3,17 @@ import {OverlayScrollbars} from "./overlayscrollbars.esm.min.js";
 console.log('OverlayScrollbars: ', OverlayScrollbars);
 
 const API_URL = 'http://localhost:3000/api';
+const typesOperation = {
+    income: 'income',
+    expenses: 'expenses',
+};
 
 const financeForm = document.querySelector('.finance__form');
 const financeAmount = document.querySelector('.finance__amount');
 const financeReport = document.querySelector('.finance__report');
 const report = document.querySelector('.report');
 const reportOperationList = document.querySelector('.report__operation-list');
+const reportDates = document.querySelector('.report__dates');
 
 let amount = 0;
 financeAmount.textContent = amount;
@@ -58,19 +63,24 @@ const openReport = () => {
     document.addEventListener('click', closeReport);
 }
 
+const reformateDate = (dateStr) => {
+    const [year, month, day] = dateStr.split('-');
+    return `${month.padStart(2, '0')}.${day.padStart(2, '0')}.${year}`;
+}
+
 const renderReport = (data) => {
     reportOperationList.textContent = '';
-    const reportRows = data.map(operation => {
+    const reportRows = data.map(({category, amount, description, date, type}) => {
         const reportRow = document.createElement('tr');
         reportRow.classList.add('report__row');
 
         reportRow.innerHTML = `
         <tr class="report__row">
-        <td class="report__cell">${operation.category}</td>
-        <td class="report__cell">${operation.amount}</td>
-        <td class="report__cell">${operation.description}</td>
-        <td class="report__cell">${operation.date}</td>
-        <td class="report__cell">${operation.type}</td>
+        <td class="report__cell">${category}</td>
+        <td class="report__cell" style="text-align:right">${amount.toLocaleString()}&nbsp;$</td>
+        <td class="report__cell">${description}</td>
+        <td class="report__cell">${reformateDate(date)}</td>
+        <td class="report__cell">${typesOperation[type]}</td>
         <td class="report__action-cell">
           <button class="report__button report__button_table">&#10006;</button>
         </td>
@@ -85,10 +95,28 @@ const renderReport = (data) => {
 financeReport.addEventListener('click', async () => {
     openReport();
     const data = await getData('/test');
-    console.log('data: ', data);
-
     renderReport(data);
 });
+
+reportDates.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = Object.fromEntries(new FormData(reportDates));
+    const searchParams = new URLSearchParams();
+    if(formData.startDate) {
+        searchParams.append('startDate', formData.startDate)
+    }
+
+    if(formData.endDate) {
+        searchParams.append('endDate', formData.endDate)
+    }
+
+    const queryString = searchParams.toString();
+
+    const url = queryString ? `/test?${queryString}` : '/test'
+    const data = await getData(url);
+    renderReport(data);
+})
 
 
 
