@@ -1,4 +1,4 @@
-// Импорт необходимых модулей
+// Import necessary modules
 import express from "express";
 import cors from "cors";
 
@@ -9,15 +9,15 @@ import { resetDB } from "./modules/resetDB.js";
 import { deleteFinanceData } from "./modules/deleteFinanceData.js";
 import { getTestData } from "./modules/getTestData.js";
 
-// Инициализация Express приложения
+// Initialize Express application
 const app = express();
 
 app.use(cors());
 
-// Middleware для разбора JSON-запросов
+// Middleware for parsing JSON requests
 app.use(express.json());
 
-// Регистрация обработчиков
+// Registering handlers
 app.get("/api/finance", getFinanceData);
 app.get("/api/test", getTestData);
 app.post("/api/finance", addFinanceData);
@@ -25,8 +25,9 @@ app.get("/api/categories", getCategories);
 app.get("/api/reset", resetDB);
 app.delete("/api/finance/:id", deleteFinanceData);
 
-// Запуск сервера
+// Starting the server
 const port = 3000;
 app.listen(port, () => {
-  console.log(`Сервер запущен на порту ${port}`);
+  console.log(`Server started on port ${port}`);
 });
+

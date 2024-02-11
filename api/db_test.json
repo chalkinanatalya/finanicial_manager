@@ -3,160 +3,160 @@
     "id": "1",
     "type": "income",
     "amount": 45000,
-    "description": "Зарплата за сентябрь",
-    "category": "Зарплата",
+    "description": "Salary for September",
+    "category": "Salary",
     "date": "2023-09-05"
   },
   {
     "id": "2",
     "type": "expenses",
     "amount": 3200,
-    "description": "Аренда жилья",
-    "category": "Жилье",
+    "description": "Rent",
+    "category": "Housing",
     "date": "2023-09-10"
   },
   {
     "id": "3",
     "type": "expenses",
     "amount": 1200,
-    "description": "Книги",
-    "category": "Образование",
+    "description": "Books",
+    "category": "Education",
     "date": "2023-09-12"
   },
   {
     "id": "4",
     "type": "expenses",
     "amount": 250,
-    "description": "Транспорт",
-    "category": "Транспорт",
+    "description": "Transport",
+    "category": "Transport",
     "date": "2023-09-14"
   },
   {
     "id": "5",
     "type": "income",
     "amount": 7000,
-    "description": "Фриланс",
-    "category": "Дополнительный доход",
+    "description": "Freelancing",
+    "category": "Additional income",
     "date": "2023-09-18"
   },
   {
     "id": "6",
     "type": "expenses",
     "amount": 850,
-    "description": "Продукты",
-    "category": "Еда",
+    "description": "Groceries",
+    "category": "Food",
     "date": "2023-09-20"
   },
   {
     "id": "7",
     "type": "expenses",
     "amount": 1900,
-    "description": "Одежда",
-    "category": "Шоппинг",
+    "description": "Clothing",
+    "category": "Shopping",
     "date": "2023-09-22"
   },
   {
     "id": "8",
     "type": "expenses",
     "amount": 480,
-    "description": "Интернет",
-    "category": "Коммунальные услуги",
+    "description": "Internet",
+    "category": "Utilities",
     "date": "2023-09-26"
   },
   {
     "id": "9",
     "type": "expenses",
     "amount": 1500,
-    "description": "Ресторан",
-    "category": "Развлечения",
+    "description": "Restaurant",
+    "category": "Entertainment",
     "date": "2023-09-28"
   },
   {
     "id": "10",
     "type": "income",
     "amount": 32000,
-    "description": "Зарплата за октябрь",
-    "category": "Зарплата",
+    "description": "Salary for October",
+    "category": "Salary",
     "date": "2023-10-05"
   },
   {
     "id": "11",
     "type": "expenses",
     "amount": 2500,
-    "description": "Техника",
-    "category": "Электроника",
+    "description": "Appliances",
+    "category": "Electronics",
     "date": "2023-10-07"
   },
   {
     "id": "12",
     "type": "expenses",
     "amount": 150,
-    "description": "Общественный транспорт",
-    "category": "Транспорт",
+    "description": "Public transport",
+    "category": "Transport",
     "date": "2023-10-11"
   },
   {
     "id": "13",
     "type": "income",
     "amount": 20000,
-    "description": "Бонус",
-    "category": "Премия",
+    "description": "Bonus",
+    "category": "Bonus",
     "date": "2023-10-15"
   },
   {
     "id": "14",
     "type": "expenses",
     "amount": 650,
-    "description": "Лекарства",
-    "category": "Здоровье",
+    "description": "Medication",
+    "category": "Health",
     "date": "2023-10-18"
   },
   {
     "id": "15",
     "type": "income",
     "amount": 1500,
-    "description": "Продажа вещей",
-    "category": "Дополнительный доход",
+    "description": "Selling items",
+    "category": "Additional income",
     "date": "2023-10-20"
   },
   {
     "id": "16",
     "type": "expenses",
     "amount": 550,
-    "description": "Кафе",
-    "category": "Еда",
+    "description": "Cafe",
+    "category": "Food",
     "date": "2023-10-23"
   },
   {
     "id": "17",
     "type": "expenses",
     "amount": 3000,
-    "description": "Подарки",
-    "category": "Подарки",
+    "description": "Gifts",
+    "category": "Gifts",
     "date": "2023-10-25"
   },
   {
     "id": "18",
     "type": "expenses",
     "amount": 2200,
-    "description": "Ремонт",
-    "category": "Дом",
+    "description": "Repair",
+    "category": "Home",
     "date": "2023-10-27"
   },
   {
     "id": "19",
     "type": "income",
     "amount": 47000,
-    "description": "Зарплата за ноябрь",
-    "category": "Зарплата",
+    "description": "Salary for November",
+    "category": "Salary",
     "date": "2023-11-05"
   },
   {
     "id": "20",
     "type": "expenses",
     "amount": 3300,
-    "description": "Путешествие",
-    "category": "Отдых",
+    "description": "Travel",
+    "category": "Vacation",
     "date": "2023-11-07"
   }
 ]
