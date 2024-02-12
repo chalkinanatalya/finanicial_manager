@@ -1,1 +1,5 @@
-{"income":["Зарплата","Подарки","Сайт ооо \"пунктир\""],"expenses":["Еда","Транспорт","Развлечения","Образование"]}
+{
+    "income": ["Salary", "Gifts", "Website of LLC 'Dotted'"],
+    "expenses": ["Food", "Transport", "Entertainment", "Education"]
+  }
+  
