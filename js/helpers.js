@@ -8,3 +8,8 @@ export const convertStringNumber = (n) => {
         false;
     }
 }
+
+export const reformateDate = (dateStr) => {
+    const [year, month, day] = dateStr.split('-');
+    return `${month.padStart(2, '0')}.${day.padStart(2, '0')}.${year}`;
+}
