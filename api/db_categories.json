@@ -1,5 +1,1 @@
-{
-    "income": ["Salary", "Gifts", "Website of LLC 'Dotted'"],
-    "expenses": ["Food", "Transport", "Entertainment", "Education"]
-  }
-  
+{"income":["Salary","Gifts","Website of LLC 'Dotted'","Food"],"expenses":["Food","Transport","Entertainment","Education","Cafe"]}
