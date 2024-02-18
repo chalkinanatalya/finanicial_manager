@@ -18,3 +18,4 @@ export const datalistControl = async () => {
 
     categoryList.append(...optionsExpenses, ...optionsIncome);
 }
+
