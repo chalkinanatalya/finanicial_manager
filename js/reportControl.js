@@ -2,15 +2,19 @@ import {OverlayScrollbars} from "./overlayscrollbars.esm.min.js";
 import { delData, getData } from "./service.js";
 import { reformateDate } from "./helpers.js";
 import { financeControl } from "./financeControl.js";
+import { clearChart, generateChart } from "./generateChart.js";
 
 const typesOperation = {
     income: 'income',
     expenses: 'expenses',
 };
+
+let actualData = []; 
 const financeReport = document.querySelector('.finance__report');
 const report = document.querySelector('.report');
 const reportOperationList = document.querySelector('.report__operation-list');
 const reportDates = document.querySelector('.report__dates');
+const generateChartButton = document.querySelector('#generateChartButton');
 
 OverlayScrollbars(report, {})
 
@@ -76,16 +80,24 @@ export const reportControl = () => {
             const reportRow = buttonDel.closest('.report__row');
             reportRow.remove();
             financeControl();
-            //clearChart();
+            clearChart();
         }
 
     });
 
 
     financeReport.addEventListener('click', async () => {
+        const textContent = financeReport.textContent;
+        financeReport.textContent = 'Loading';
+        financeReport.disabled = true;
+
+        actualData = await getData('/finance');
+
+        financeReport.textContent = textContent;
+        financeReport.disabled = false;
+
+        renderReport(actualData);
         openReport();
-        const data = await getData('/finance');
-        renderReport(data);
     });
     
     reportDates.addEventListener('submit', async (e) => {
@@ -104,7 +116,11 @@ export const reportControl = () => {
         const queryString = searchParams.toString();
     
         const url = queryString ? `/finance?${queryString}` : '/finance'
-        const data = await getData(url);
-        renderReport(data);
+        actualData = await getData(url);
+        renderReport(actualData);
     });
 }
+
+generateChartButton.addEventListener('click', () => {
+    generateChart(actualData);
+})
