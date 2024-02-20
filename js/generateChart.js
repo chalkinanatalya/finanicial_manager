@@ -1,4 +1,5 @@
 const reportChart = document.querySelector('.report__chart');
+let myChart;
 
 export const clearChart = () => {
     reportChart.textContent = '';
@@ -20,9 +21,67 @@ export const generateChart = (data) => {
             return [acc[0], acc[1]];
         }, [0, []]);
 
-    const accIncome = reduceOperationDate(incomeData);
-    const accExpenses = reduceOperationDate(expensesData);
+    const [accIncome, incomeAmounts] = reduceOperationDate(incomeData);
+    const [accExpenses, expensesAmounts] = reduceOperationDate(expensesData);
 
-    console.log('accIncome: ', accIncome);
     console.log('accExpenses: ', accExpenses);
+    console.log('accIncome: ', accIncome);
+    
+
+    const balanceAmounts = incomeAmounts.map((income, i) => income - expensesAmounts[i]);
+
+    const canvasChart = document.createElement('canvas');
+    clearChart();
+    reportChart.append(canvasChart);
+
+    const ctx = canvasChart.getContext('2d');
+
+    if(myChart instanceof Chart) {
+        myChart.destroy();
+    }
+
+    myChart = new Chart(ctx), {
+        type: 'line',
+        data: {
+            labels: chartLabel,
+            dataset: [
+                {
+                    label: 'income',
+                    data: incomeAmounts,
+                    borderWidth: 2,
+                    hidden: true
+                },
+                {
+                    label: 'expenses',
+                    data: expensesAmounts,
+                    borderWidth: 2,
+                    hidden: true
+                },
+                {
+                    label: 'balance',
+                    data: balanceAmounts,
+                    borderWidth: 2,
+                    hidden: false
+                },
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                }
+            },
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'financial graph'
+                },
+                legend: {
+                    position: 'top'
+                }
+            }
+        }
+    }
 }
+

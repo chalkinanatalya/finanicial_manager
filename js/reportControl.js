@@ -91,7 +91,7 @@ export const reportControl = () => {
         financeReport.textContent = 'Loading';
         financeReport.disabled = true;
 
-        actualData = await getData('/finance');
+        actualData = await getData('/test');
 
         financeReport.textContent = textContent;
         financeReport.disabled = false;
@@ -115,7 +115,7 @@ export const reportControl = () => {
     
         const queryString = searchParams.toString();
     
-        const url = queryString ? `/finance?${queryString}` : '/finance'
+        const url = queryString ? `/test?${queryString}` : '/test'
         actualData = await getData(url);
         renderReport(actualData);
     });
