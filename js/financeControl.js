@@ -33,7 +33,7 @@ const addNewOperation = async (e) => {
 }
 
 export const financeControl = async () => {
-    const operations = await getData('/finance');
+    const operations = await getData('/test');
 
     amount = operations.reduce((acc, item) => {
         if(item.type === 'income') {
