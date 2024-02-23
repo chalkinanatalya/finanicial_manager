@@ -40,11 +40,11 @@ export const generateChart = (data) => {
         myChart.destroy();
     }
 
-    myChart = new Chart(ctx), {
+    myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: chartLabel,
-            dataset: [
+            datasets: [
                 {
                     label: 'income',
                     data: incomeAmounts,
@@ -82,6 +82,6 @@ export const generateChart = (data) => {
                 }
             }
         }
-    }
+    });
 }
 
